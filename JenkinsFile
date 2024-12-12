@@ -1,13 +1,6 @@
 pipeline {
-agent(
-   docker {
-            image 'python:3.9-slim'  // Use an official Python image
-            label 'python-docker-agent'
-        }
-     }
-    
-  
-  stages 
+agent any
+    stages 
   {
     stage('Checkout') 
     {
