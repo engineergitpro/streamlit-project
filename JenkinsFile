@@ -58,7 +58,7 @@ agent any
                     }
         steps 
         {
-            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) 
+            withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')]) 
             {
                 sh '''
                     git config user.email "supriyajer94@gmail.com"
