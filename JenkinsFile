@@ -1,5 +1,8 @@
 pipeline {
-  agent any
+   docker {
+            image 'python:3.9-slim'  // Use an official Python image
+            label 'python-docker-agent'
+        }
     
   
   stages 
@@ -19,8 +22,6 @@ pipeline {
       steps {
         script {
                     sh '''
-                          sudo apt-get update
-                          sudo apt-get install -y python3-venv python3-pip
                           python3 -m venv venv
                           . venv/bin/activate && pip install -r requirements.txt
                        '''
