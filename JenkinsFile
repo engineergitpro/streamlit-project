@@ -66,7 +66,7 @@ agent any
                     git config user.email "supriyajer94@gmail.com"
                     git config user.name "Supriya Jadhav"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifests/deployment.yml
+                    sed -i 's/replaceImageTag/'${BUILD_NUMBER}'/g'" manifests/deployment.yml
                     git diff
                     git add manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
