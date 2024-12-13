@@ -73,7 +73,7 @@ agent any
                     git diff
                     git add manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    
+                    git remote set-url origin https://GIT_USER_NAME:GIT_TOKEN@github.com//streamlit-project.git
                     git push https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     
                 '''
