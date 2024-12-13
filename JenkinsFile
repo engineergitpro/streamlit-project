@@ -7,7 +7,8 @@ agent any
       steps 
       {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/engineergitpro/streamlit-project.git'
+        git branch: 'main', url: 'https://github.com/engineergitpro/streamlit-project.git'
+        
       }
     }
 
@@ -71,7 +72,7 @@ agent any
                     git diff
                     git add manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git remote set-url origin https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git
+                    
                     git push https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     
                 '''
