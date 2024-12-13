@@ -61,6 +61,7 @@ agent any
             withCredentials([string(credentialsId: 'GIT_TOKEN', variable: 'GIT_TOKEN')]) 
             {
                 sh '''
+                
                     git checkout main
                     git pull origin main
                     git config --global user.email "supriyajer94@gmail.com"
@@ -70,6 +71,7 @@ agent any
                     git diff
                     git add manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+                    git remote set-url origin https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git
                     git push https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     
                 '''
