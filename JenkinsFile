@@ -70,7 +70,7 @@ agent any
                     git config user.name "Supriya Jadhav"
                     echo BUILD_NUMBER:${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifests/deployment.yml
-
+                    echo "" >> manifests/deployment.yml
 
                     git diff
                     git add manifests/deployment.yml
