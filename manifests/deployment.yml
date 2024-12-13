@@ -19,3 +19,4 @@ spec:
         image: supriyajadhav24/streamlitapp:17
         ports:
         - containerPort: 8080
+
