@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: streamlit-app
-        image: supriyajadhav24/streamlitapp:replaceImageTag
+        image: supriyajadhav24/streamlitapp:${BUILD_NUMBER}
         ports:
         - containerPort: 8080
